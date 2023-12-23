@@ -1,0 +1,6 @@
+POST joelgrayson.com/api/log-error/joelgreyson.com
+Content-Type: application/json
+
+{
+    "url": "/test"
+}

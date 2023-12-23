@@ -1,23 +1,19 @@
 const express=require('express');
 const app=express();
 const port=process.env.PORT || 3000;
+const path=require('path');
+const axios=require('axios');
 
 // Public folder
 app.use(express.static('public'));
 
 app.get('*', (req, res)=>{
-    res.sendFile(__dirname+'/index.html');
+    res.sendFile(path.join(__dirname, 'index.html'));
 
     // Report instance to DB
-    fetch('https://joelgrayson.com/api/log-error/joelgreyson.com/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            url: req.url
-        })
-    })
+    axios.post('https://joelgrayson.com/api/log-error/joelgreyson.com', {
+        url: req.url
+    });
 })
 
 app.listen(port,()=>console.log(`Listening on port ${port}...`));
