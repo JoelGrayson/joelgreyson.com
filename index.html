@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joel GrAyson with an A</title>
+    <style>
+        @font-face {
+            font-family: Myriad;
+            src: url('https://joelgrayson.com/styles/fonts/Myriad Pro Bold.ttf');
+        }
+        body {
+            font-family: Myriad;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .row1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .row2 {
+            font-size: 3rem;
+        }
+        .e2a {
+            height: 1.65rem;
+            display: inline;
+            margin: 0;
+            margin-left: -.15em;
+            margin-right: -.15em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row1">It&apos;s spelled</div>
+        <div class="row2">
+            <span>Joel </span>
+            <span>Gr</span>
+            <img src="/e2a.gif" alt="a" class="e2a">
+            <span>yson</span>
+        </div>
+    </div>
+
+    <script>
+        // Redirect after a Few Seconds
+        setTimeout(()=>{
+            window.location.href='https://joelgrayson.com'+window.location.pathname;
+        }, 3000);
+    </script>
+</body>
+</html>
