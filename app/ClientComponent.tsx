@@ -9,10 +9,12 @@ export default function ClientComponent() {
         if (typeof window === 'undefined') return;
         
         // Report
+        const body = { url: window.location.href };
+        console.log('Body', body);
         fetch('https://joelgrayson.com/api/log-error/joelgreyson.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ url: window.location.href }),
+            body: JSON.stringify(body),
         });
 
         // Redirect
@@ -21,45 +23,32 @@ export default function ClientComponent() {
         }, 3000);
     }, [typeof window]);
     
-    return <>
-        <style jsx>{`
-            body {
-                margin: 0;
-            }
-            .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-            }
-            .row1 {
-                font-size: 2rem;
-                margin-bottom: 15px;
-            }
-            .row2 {
-                font-size: 3rem;
-            }
-            .e2a {
-                height: 1.65rem;
-                display: inline;
-                margin: 0;
-                margin-left: 0.02em;
-                margin-right: 0em;
-                /* margin-left: -.15em;
-                margin-right: -.15em; */
-            }
-        `}</style>
+    return <div className={"container "+myriadProBold.className} style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh'
+    }}>
+        <div style={{
+            fontSize: '2rem',
+            marginBottom: 15
+        }}>It&apos;s spelled</div>
 
-        <div className={"container "+myriadProBold.className}>
-            <div className="row1">It&apos;s spelled</div>
-            <div className="row2">
-                <span>Joel </span>
-                <span>Gr</span>
-                <img src="/e2a.gif" alt="a" className="e2a" />
-                <span>yson</span>
-            </div>
+        <div style={{
+            fontSize: '3rem'
+        }}>
+            <span>Joel </span>
+            <span>Gr</span>
+            <img src="/e2a.gif" alt="a" style={{
+                height: '1.65rem',
+                display: 'inline',
+                margin: 0,
+                marginLeft: '0.02em',
+                marginRight: '0em',
+            }} />
+            <span>yson</span>
         </div>
-    </>;
+    </div>;
 }
 
