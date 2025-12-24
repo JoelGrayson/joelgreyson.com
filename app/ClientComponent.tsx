@@ -23,12 +23,13 @@ export default function ClientComponent() {
         }, 3000);
     }, [typeof window]);
     
-    return <div className={"container "+myriadProBold.className} style={{
+    return <div className={myriadProBold.className} style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh'
+        height: '100vh',
+        width: '100vw'
     }}>
         <div style={{
             fontSize: '2rem',
@@ -36,7 +37,7 @@ export default function ClientComponent() {
         }}>It&apos;s spelled</div>
 
         <div style={{
-            fontSize: '3rem'
+            fontSize: '3rem',
         }}>
             <span>Joel </span>
             <span>Gr</span>

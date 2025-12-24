@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-    return <div>
+    return <div style={{ width: '100%', height: '100%' }}>
         <ClientComponent />
     </div>;
 }
